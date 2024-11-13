@@ -5,7 +5,7 @@ namespace Ryujinx.HLE.HOS.Kernel.Threading
     class KCriticalSection
     {
         private readonly KernelContext _context;
-        private readonly Lock _lock = new();
+        private readonly object _lock = new();
         private int _recursionCount;
 
         public object Lock => _lock;
