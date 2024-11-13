@@ -10,7 +10,7 @@ namespace Ryujinx.HLE.HOS.Services.Sockets.Bsd.Impl
         private ulong _value;
         private readonly EventFdFlags _flags;
 
-        private readonly object _lock = new();
+        private readonly Lock _lock = new();
 
         public bool Blocking { get => !_flags.HasFlag(EventFdFlags.NonBlocking); set => throw new NotSupportedException(); }
 
